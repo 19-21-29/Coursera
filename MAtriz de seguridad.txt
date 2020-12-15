@@ -1,0 +1,201 @@
+
+---Creacion Usuario--------
+
+alter session set "_ORACLE_SCRIPT"=true;
+
+ CREATE USER jizaguirre
+ IDENTIFIED BY bd ;
+
+
+
+-- USER SQL
+
+ ALTER USER jizaguirre DEFAULT TABLESPACE "SYSTEM"
+
+ TEMPORARY TABLESPACE "TEMP"
+
+ ACCOUNT UNLOCK ;
+
+ -- ROLES
+
+
+ GRANT "CONNECT" TO jizaguirre ;
+
+ -- SYSTEM PRIVILEGES
+
+ GRANT SYSDBA TO jizaguirre ;
+
+ GRANT SYSOPER TO jizaguirre  ;
+
+
+-------------------------------------------------------------
+---Creacion Usuario--------
+
+alter session set "_ORACLE_SCRIPT"=true;
+
+ CREATE USER dvilla
+ IDENTIFIED BY bd ;
+
+
+
+-- USER SQL
+
+ ALTER USER dvilla DEFAULT TABLESPACE "SYSTEM"
+
+ TEMPORARY TABLESPACE "TEMP"
+
+ ACCOUNT UNLOCK ;
+
+ -- ROLES
+
+
+
+ GRANT "CONNECT" TO dvilla ;
+
+ -- SYSTEM PRIVILEGES
+
+
+ GRANT SYSOPER TO dvilla ;
+ -----------------------------------------------------------
+ alter session set "_ORACLE_SCRIPT"=true;
+
+ CREATE USER bmartinez
+ IDENTIFIED BY bd ;
+ ALTER USER bmartinez DEFAULT TABLESPACE "SYSTEM"
+
+ TEMPORARY TABLESPACE "TEMP"
+
+ ACCOUNT UNLOCK ;
+
+ -- ROLES
+
+
+ GRANT "CONNECT" TO bmartinez ;
+
+ -- SYSTEM PRIVILEGES
+
+
+ -------------------------------------
+  alter session set "_ORACLE_SCRIPT"=true;
+
+ CREATE USER acortes
+ IDENTIFIED BY bd ;
+  ALTER USER acortes DEFAULT TABLESPACE "SYSTEM"
+
+ TEMPORARY TABLESPACE "TEMP"
+
+ ACCOUNT UNLOCK ;
+
+ -- ROLES
+
+
+
+ GRANT "CONNECT" TO acortes ;
+
+ -- SYSTEM PRIVILEGES
+
+
+ -------------------------------------------
+    alter session set "_ORACLE_SCRIPT"=true;
+
+ CREATE USER imelchor
+ IDENTIFIED BY bd ;
+  ALTER USER imelchor DEFAULT TABLESPACE "SYSTEM"
+
+ TEMPORARY TABLESPACE "TEMP"
+
+ ACCOUNT UNLOCK ;
+
+ -- ROLES
+
+
+
+ GRANT "CONNECT" TO imelchor ;
+
+ -- SYSTEM PRIVILEGES
+
+
+
+create role administrador;
+
+grant select any table to administrador;
+grant update any table to administrador;
+grant insert any table to administrador;
+grant delete any table to administrador;
+
+GRANT select any table TO administrador WITH ADMIN OPTION;
+GRANT update any table TO administrador WITH ADMIN OPTION;
+GRANT insert any table TO administrador WITH ADMIN OPTION;
+GRANT delete any table TO administrador WITH ADMIN OPTION;
+
+
+grant select on torre to administrador;
+grant select,insert,update,delete on especialidad to administrador;
+grant select,insert,update,delete on esp to administrador;
+grant select,insert,update,delete on correo_h to administrador;
+grant select,insert,update,delete on tel_h to administrador;
+grant select,insert,update,delete on departamento to administrador;
+grant select,insert,update,delete on habitacion to administrador;
+grant select,insert,update,delete on medico to administrador;
+grant select,insert,update,delete on hospital to administrador;
+grant select,insert,update,delete on cp to administrador;
+grant select,insert,update,delete on enfermero to administrador;
+grant select,insert,update,delete on paci_med to administrador;
+grant select,insert,update,delete on pers_med to administrador;
+grant select,insert,update,delete on colonia to administrador;
+grant select,insert,update,delete on paci_enf to administrador;
+grant select,insert,update,delete on paciente to administrador;
+grant select,insert,update,delete on paci_pc to administrador;
+grant select,insert,update,delete on pers_confi to administrador;
+grant select,insert,update,delete on persona to administrador;
+grant select,insert,update,delete on estado to administrador;
+grant select,insert,update,delete on informe to administrador;
+grant select,insert,update,delete on supervisor to administrador;
+grant select,insert,update,delete on correo_p to administrador;
+grant select,insert,update,delete on tel_p to administrador;
+grant select,insert,update,delete on tipo_correo to administrador;
+grant select,insert,update,delete on tipo_tel to administrador;
+grant select,insert,update,delete on alcaldia to administrador;
+
+
+grant administrador to jizaguirre;
+grant insert,update,delete on torre to jizaguirre;
+
+grant administrador to dvilla;
+
+create role consultor;
+
+grant select any table to consultor;
+
+grant select on torre to consultor;
+grant select on especialidad to consultor;
+grant select on esp to consultor;
+grant select on correo_h to consultor;
+grant select on tel_h to consultor;
+grant select on departamento to consultor;
+grant select on habitacion to consultor;
+grant select on medico to consultor;
+grant select on hospital to consultor;
+grant select on cp to consultor;
+grant select on enfermero to consultor;
+grant select on paci_med to consultor;
+grant select on pers_med to consultor;
+grant select on colonia to consultor;
+grant select on paci_enf to consultor;
+grant select on paciente to consultor;
+grant select on paci_pc to consultor;
+grant select on pers_confi to consultor;
+grant select on persona to consultor;
+grant select on estado to consultor;
+grant select on informe to consultor;
+grant select on supervisor to consultor;
+grant select on correo_p to consultor;
+grant select on tel_p to consultor;
+grant select on tipo_correo to consultor;
+grant select on tipo_tel to consultor;
+grant select on alcaldia to consultor;
+
+
+grant consultor to bmartinez;
+grant consultor to acortes;
+grant consultor to imelchor;
